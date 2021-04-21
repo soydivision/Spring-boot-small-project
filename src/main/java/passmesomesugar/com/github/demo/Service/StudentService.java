@@ -8,11 +8,14 @@ import java.util.Collection;
 
 @Service
 public class StudentService {
-  
-  @Autowired 	
-  private StudentDAO studentDao;
+
+  @Autowired private StudentDAO studentDao;
 
   public Collection<Student> getAllStudents() {
     return studentDao.getAllStudents();
+  }
+
+  public Student getStudentById(int id) {
+    return studentDao.getStudentById(id);
   }
 }
