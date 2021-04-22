@@ -1,12 +1,13 @@
 package passmesomesugar.com.github.demo.Controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import passmesomesugar.com.github.demo.Entity.Student;
 import passmesomesugar.com.github.demo.Service.StudentService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
+
 import java.util.Collection;
 
 @RestController
@@ -23,5 +24,10 @@ public class StudentController {
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
   public Student getStudentById(@PathVariable("id") int id) {
     return studentService.getStudentById(id);
+  }
+
+  @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+  public void deleteStudentById(@PathVariable("id") int id) {
+    studentService.removeStudentById(id);
   }
 }

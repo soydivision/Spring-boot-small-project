@@ -1,7 +1,8 @@
 package passmesomesugar.com.github.demo.DataAccessObject;
 
-import passmesomesugar.com.github.demo.Entity.Student;
 import org.springframework.stereotype.Repository;
+import passmesomesugar.com.github.demo.Entity.Student;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,4 +29,11 @@ public class StudentDAO {
   public Student getStudentById(int id) {
     return students.get(id);
   }
+  
+  public void removeStudentById(int id){
+	  this.students.remove(id);
+	  
+  }
+  
+  
 }
