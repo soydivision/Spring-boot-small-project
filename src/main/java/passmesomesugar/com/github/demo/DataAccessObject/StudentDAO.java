@@ -29,11 +29,15 @@ public class StudentDAO {
   public Student getStudentById(int id) {
     return students.get(id);
   }
-  
-  public void removeStudentById(int id){
-	  this.students.remove(id);
-	  
+
+  public void removeStudentById(int id) {
+    students.remove(id);
   }
-  
-  
+
+  public void updateStudent(Student student) {
+    Student s = students.get(student.getId());
+    s.setCourse(student.getCourse());
+    s.setName(student.getName());
+    students.put(student.getId(), student);
+  }
 }

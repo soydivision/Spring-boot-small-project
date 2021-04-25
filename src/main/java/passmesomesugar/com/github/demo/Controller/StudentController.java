@@ -1,10 +1,8 @@
 package passmesomesugar.com.github.demo.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
 import passmesomesugar.com.github.demo.Entity.Student;
 import passmesomesugar.com.github.demo.Service.StudentService;
 
@@ -29,5 +27,10 @@ public class StudentController {
   @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
   public void deleteStudentById(@PathVariable("id") int id) {
     studentService.removeStudentById(id);
+  }
+
+  @RequestMapping(method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+  public void deleteStudentById(@RequestBody Student student) {
+    studentService.updateStudent(student);
   }
 }
