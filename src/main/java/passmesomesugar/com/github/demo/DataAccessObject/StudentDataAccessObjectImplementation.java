@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Repository
-public class StudentDAO {
+public class StudentDataAccessObjectImplementation implements StudentDataAccessObject {
   private static Map<Integer, Student> students;
 
   static {
@@ -22,18 +22,22 @@ public class StudentDAO {
         };
   }
 
+  @Override
   public Collection<Student> getAllStudents() {
     return students.values();
   }
 
+  @Override
   public Student getStudentById(int id) {
     return students.get(id);
   }
 
+  @Override
   public void removeStudentById(int id) {
     students.remove(id);
   }
 
+  @Override
   public void updateStudent(Student student) {
     Student s = students.get(student.getId());
     s.setCourse(student.getCourse());
@@ -41,6 +45,7 @@ public class StudentDAO {
     students.put(student.getId(), student);
   }
 
+  @Override
   public void insertStudentToDB(Student student) {
     students.put(student.getId(), student);
   }

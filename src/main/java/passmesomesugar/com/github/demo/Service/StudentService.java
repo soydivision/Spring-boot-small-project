@@ -2,7 +2,7 @@ package passmesomesugar.com.github.demo.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import passmesomesugar.com.github.demo.DataAccessObject.StudentDAO;
+import passmesomesugar.com.github.demo.DataAccessObject.StudentDataAccessObjectImplementation;
 import passmesomesugar.com.github.demo.Entity.Student;
 
 import java.util.Collection;
@@ -10,7 +10,7 @@ import java.util.Collection;
 @Service
 public class StudentService {
 
-  @Autowired private StudentDAO studentDao;
+  @Autowired private StudentDataAccessObjectImplementation studentDao;
 
   public Collection<Student> getAllStudents() {
     return studentDao.getAllStudents();
