@@ -19,13 +19,16 @@ public class StudentService {
   public Student getStudentById(int id) {
     return studentDao.getStudentById(id);
   }
-  
-  public void removeStudentById(int id){
-	  this.studentDao.removeStudentById(id);
+
+  public void removeStudentById(int id) {
+    this.studentDao.removeStudentById(id);
   }
-  
-   public void updateStudent(Student student) {
-   studentDao.updateStudent(student);
+
+  public void updateStudent(Student student) {
+    studentDao.updateStudent(student);
   }
-  
+
+  public void insertStudent(Student student) {
+    this.studentDao.insertStudentToDB(student);
+  }
 }

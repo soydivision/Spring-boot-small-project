@@ -40,4 +40,8 @@ public class StudentDAO {
     s.setName(student.getName());
     students.put(student.getId(), student);
   }
+
+  public void insertStudentToDB(Student student) {
+    students.put(student.getId(), student);
+  }
 }
